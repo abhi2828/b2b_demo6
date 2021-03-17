@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -28,6 +28,457 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
+<style>
+    p,
+    a {
+        text-transform: capitalize;
+    }
+    
+    li.item_line {
+        width: 80px;
+        border-right: 1px solid white;
+        margin: 0 8px;
+    }
+    
+    div#navbarContent {
+        justify-content: flex-end;
+    }
+    
+    .navbar.navbar-dark .breadcrumb .nav-item .nav-link:hover,
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+        color: #75c5ff;
+        font-weight: 700;
+    }
+    
+    .navbar.navbar-dark .breadcrumb .nav-item .nav-link,
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+        color: #fff;
+        transition: .35s;
+        font-weight: 700;
+    }
+    
+    .search_box_bg {
+        background: #0029399e;
+    }
+    
+    .banner_img {
+        background: url(img/bg3.jpg) no-repeat center center;
+        position: relative;
+        height: 100vh;
+        background-size: cover;
+    }
+    
+    input#From {
+        color: #ffffff;
+    }
+    
+    .form {
+        width: 100%;
+    }
+    
+    div#show-me-three,
+    div#show-me-two {
+        display: none;
+    }
+    
+    .direct_flight {
+        color: #ffffff;
+        margin-left: 30px;
+    }
+    
+    .col-md-12.show_flight {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container.background_form {
+        background: #002939ab;
+    }
+    
+    .card-body {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 15px 30px;
+    }
+    
+    section {
+        width: 100%;
+        min-height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    section::before {
+        width: 30px;
+        height: 30px;
+        background: #009970;
+        clip-path: polygon(0 100%, 100% 0, 100% 100%);
+        top: 18px;
+        left: 18px;
+    }
+    
+    section::after {
+        width: 42px;
+        height: 42px;
+        border: 1px solid #009970;
+        top: 11px;
+        left: 11px;
+    }
+    
+    .design {
+        width: 25px;
+        height: 25px;
+        border: 1px solid hsl(164deg 100% 30%);
+        border-radius: 100%;
+        margin-right: 16px;
+        position: relative;
+    }
+    
+    .radio_btn {
+        display: flex;
+    }
+    
+    label.input_lable {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin: 12px 30px;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .input_lable input {
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    
+    .drop_down_option {
+        display: block;
+        width: 100%;
+        height: 50px;
+        border-radius: 30px;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #ffffff;
+        background-color: #009970;
+        background-clip: padding-box;
+        border: 1px solid #009970;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+    
+    .design {
+        width: 25px;
+        height: 25px;
+        border: 1px solid #009970;
+        border-radius: 100%;
+        margin-right: 16px;
+        position: relative;
+    }
+    
+    .design::before,
+    .design::after {
+        content: "";
+        display: block;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        position: absolute;
+        transform: scale(0);
+        transform-origin: center center;
+    }
+    
+    .design:before {
+        background: #009970;
+        opacity: 0;
+        transition: .3s;
+    }
+    
+    .design::after {
+        background: #009970;
+        opacity: .4;
+        transition: .6s;
+    }
+    
+    .text {
+        color: #009970;
+        font-weight: bold;
+    }
+    
+    .input_lable input:checked+.design::before {
+        opacity: 1;
+        transform: scale(.6);
+        left: -1.01px;
+        top: -1.01px;
+    }
+    
+    .input_lable input:hover+.design,
+    .input_lable input:focus+.design {
+        border: 1px solid #009970;
+    }
+    
+    .input_lable input:hover+.design:before,
+    .input_lable input:focus+.design:before {
+        background: #009970;
+    }
+    
+    .input_lable input:hover~.text,
+    .input_lable input:focus~.text {
+        color: #009970;
+    }
+    
+    .input_lable input:focus+.design::after,
+    .input_lable input:active+.design::after {
+        opacity: .1;
+        transform: scale(2.6);
+    }
+    
+    .abs-site-link {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        color: hsla(0, 0%, 0%, .6);
+        background: hsla(0, 0%, 98%, .6);
+        font-size: 16px;
+    }
+    
+    span.form-label {
+        color: white;
+    }
+    
+    .col-md-6.show_flight {
+        margin-top: 15px;
+    }
+    
+    .form-check {
+        position: relative;
+        display: block;
+        padding-left: 1.25rem;
+        top: 18px;
+    }
+    
+    .wow .img1 {
+        vertical-align: middle;
+        border-style: none;
+        width: 100px;
+    }
+    
+    .wow .img2 {
+        vertical-align: middle;
+        border-style: none;
+        width: 152px;
+        margin-top: 30px;
+    }
+    
+    .form-check-label {
+        margin-bottom: 0;
+        color: white !important;
+    }
+    
+    h2,
+    .h4 {
+        text-transform: uppercase;
+        color: #096386;
+    }
+    /* footer */
+    
+    .footer-text p {
+        margin-bottom: 14px;
+        font-size: 14px;
+        color: #000000;
+        text-align: center;
+    }
+    
+    .footer-social-icon span {
+        color: #fff;
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 20px;
+    }
+    
+    .footer-social-icon a {
+        color: #fff;
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    
+    .footer-social-icon i {
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 38px;
+        border-radius: 50%;
+    }
+    
+    .facebook-bg {
+        background: #3B5998;
+    }
+    
+    .twitter-bg {
+        background: #55ACEE;
+    }
+    
+    .google-bg {
+        background: #DD4B39;
+    }
+    
+    .footer-widget-heading h3 {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .OurServicesHeading h3::before {
+        left: 94px !important;
+    }
+    
+    .footer-widget-heading h3::before {
+        content: "";
+        position: absolute;
+        left: 53px;
+        bottom: -15px;
+        height: 2px;
+        width: 50px;
+        background: white;
+    }
+    
+    .footer-widget ul li {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 2px;
+        padding-left: 30px;
+    }
+    
+    .OurServices li {
+        padding-left: 98px !important;
+    }
+    
+    .footer-widget ul li a:hover {
+        color: white;
+    }
+    
+    .footer-widget ul li a {
+        color: #002939;
+        text-transform: capitalize;
+    }
+    
+    .subscribe-form {
+        position: relative;
+        overflow: hidden;
+        padding: 0 277px;
+    }
+    
+    .subscribe-form input {
+        width: 100%;
+        padding: 14px 28px;
+        background: #fffbfb;
+        border: 1px solid #2f3e54;
+        color: #fff;
+        height: 55px;
+        border-radius: 10px;
+    }
+    
+    .subscribe-form button {
+        position: absolute;
+        right: 24%;
+        background: #2f3e54;
+        padding: 13px 20px;
+        border: 1px solid #2f3e54;
+        top: 0;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    .subscribe-form button i {
+        color: white;
+        font-size: 22px;
+        transform: rotate(-6deg);
+    }
+    
+    .copyright-area {
+        background: white;
+        padding: 25px 0;
+    }
+    
+    .copyright-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #5f6060;
+    }
+    
+    .copyright-text p a {
+        color: white;
+    }
+    
+    .footer-menu li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+    
+    .footer-menu li:hover a {
+        color: white;
+    }
+    
+    .footer-menu li a {
+        font-size: 14px;
+        color: #002939;
+    }
+    
+    footer {
+        background: #002939;
+    }
+    
+    img.dowloadlink {
+        width: 90px;
+    }
+    
+    .dowloadlink_heading h3::before {
+        left: 90px !important;
+    }
+    
+    .payment_option_icon {
+        font-size: 30px;
+    }
+    
+    .text-white {
+        color: #908d8d!important;
+    }
+    
+    .page-content {
+        margin-top: 30px;
+    }
+    
+    .footer-widget-heading {
+        text-align: center;
+        padding-left: 64px;
+    }
+    
+    .footer-widget ul li a {
+        color: #d6cfcf;
+        text-transform: capitalize;
+    }
+    
+    img.card-img-top {
+        height: 205px;
+    }
+    
+    .news {
+        text-align: center;
+    }
+</style>
 
 <body>
 
@@ -85,7 +536,6 @@
     <!-- End Hero -->
 
     <main id="main">
-
         <!-- End Clients Section -->
 
         <!-- ======= Counts Section ======= -->
@@ -94,48 +544,176 @@
                 <div class="row">
                     <div class="col-md-12" style="margin-top: 7px;">
                         <div class="wrap">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label class="active_lable" for="From">Flying From</label>
-                                    <input id="From" placeholder="Flying From" type="text" class="cool" />
+                            <div class="radio_btn">
+                                <label class="input_lable">
+                                    <input id='watch-me' type="radio" name="dark" value="One_way" checked>
+                                    <span class="design"></span>
+                                    <span class="text One_way">One way</span>
+                                </label>
+
+                                <label class="input_lable">
+                                    <input id='see-me' type="radio" name="dark" value="Roundtrip">
+                                    <span class="design"></span>
+                                    <span class="text Roundtrip">Roundtrip</span>
+                                </label>
+
+                                <label class="input_lable">
+                                    <input id='look-me' type="radio" name="dark" value="multi_city">
+                                    <span class="design"></span>
+                                    <span class="text multi_city">Multi-City</span>
+                                </label>
+                            </div>
+                            <br>
+                            <div id='show-me' class="form">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="active_lable" for="From">Flying From</label>
+                                        <input id="From" placeholder="Flying From" type="text" class="cool" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="active_lable" for="TO">Flying TO</label>
+                                        <input id="TO" placeholder="Flying To" type="text" class="cool" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="active_lable" for="fname" class="date">Departure Date</label>
+                                        <input id="fname" type="date" class="cool" />
+                                    </div>
+                                    <!-- <div class="col-md-2">
+                                        <label class="active_lable" for="fname" class="date">Arrival Date</label>
+                                        <input id="fname" type="date" class="cool" />
+                                    </div> -->
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="active_lable" for="TO">Flying TO</label>
-                                    <input id="TO" placeholder="Flying To" type="text" class="cool" />
+                                <div class="row mb-0 mt-0">
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="lname">Adult</label>
+                                        <input id="lname" type="number" min="1" max="10" value="1" class="cool" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="lname">Children (2 - 12 yrs)</label>
+                                        <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="lname">Infant (0 - 24 Month)</label>
+                                        <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="Travel class">Travel class</label>
+                                        <select class="drop_down_option">
+                                                <option>Economy class</option>
+                                                <option>Business class</option>
+                                                <option>First class</option>
+                                            </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <label class="active_lable" for="fname" class="date">Departure Date</label>
-                                    <input id="fname" type="date" class="cool" />
-                                </div>
-                                <div class="col-md-2">
-                                    <label class="active_lable" for="fname" class="date">Arrival Date</label>
-                                    <input id="fname" type="date" class="cool" />
+                                <div class="row mb-0 mt-0">
+                                    <div class="col-md-5 off-set-4"></div>
+                                    <div class="col-md-4 off-set-4">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck1"> <span id="Check_content">Direct Flight</span>
+                                        <button type="submit" class="btn btn-danger my-1 ">Show flights</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row mb-0 mt-0">
-                                <div class="col-md-3">
-                                    <label class="active_lable" for="lname">Adult</label>
-                                    <input id="lname" type="number" min="1" max="10" value="1" class="cool" />
+                            <div id='show-me-two' class="form">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="active_lable" for="From">Flying From</label>
+                                        <input id="From" placeholder="Flying From" type="text" class="cool" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="active_lable" for="TO">Flying TO</label>
+                                        <input id="TO" placeholder="Flying To" type="text" class="cool" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="active_lable" for="fname" class="date">Departure Date</label>
+                                        <input id="fname" type="date" class="cool" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="active_lable" for="fname" class="date">Arrival Date</label>
+                                        <input id="fname" type="date" class="cool" />
+                                    </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label class="active_lable" for="lname">Children</label>
-                                    <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                                <div class="row mb-0 mt-0">
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="lname">Adult</label>
+                                        <input id="lname" type="number" min="1" max="10" value="1" class="cool" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="lname">Children (2 - 12 yrs)</label>
+                                        <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="lname">Infant (0 - 24 Month)</label>
+                                        <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="Travel class">Travel class</label>
+                                        <select class="drop_down_option">
+                                                <option>Economy class</option>
+                                                <option>Business class</option>
+                                                <option>First class</option>
+                                            </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label class="active_lable" for="lname">Adult</label>
-                                    <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="active_lable" for="Preferred Airline">Preferred Airline</label>
-                                    <input id="lname" placeholder="Preferred Airline" type="text" class="cool" />
+                                <div class="row mb-0 mt-0">
+                                    <div class="col-md-5 off-set-4"></div>
+                                    <div class="col-md-4 off-set-4">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck1"> <span id="Check_content">Direct Flight</span>
+                                        <button type="submit" class="btn btn-danger my-1 ">Show flights</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row mb-0 mt-0">
-                                <div class="col-md-5 off-set-4"></div>
-                                <div class="col-md-4 off-set-4">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck1"> <span id="Check_content">Direct Flight</span>
-                                    <button type="submit" class="btn btn-danger my-1 flight_abhay_search">Show flights</button>
+                            <div id='show-me-three' class="form">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="active_lable" for="From">Flying From</label>
+                                        <input id="From" placeholder="Flying From" type="text" class="cool" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="active_lable" for="TO">Flying TO</label>
+                                        <input id="TO" placeholder="Flying To" type="text" class="cool" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="active_lable" for="fname" class="date">Departure Date</label>
+                                        <input id="fname" type="date" class="cool" />
+                                    </div>
+                                    <!-- <div class="col-md-2">
+                                        <label class="active_lable" for="fname" class="date">Arrival Date</label>
+                                        <input id="fname" type="date" class="cool" />
+                                    </div> -->
                                 </div>
+                                <div class="row mb-0 mt-0">
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="lname">Adult</label>
+                                        <input id="lname" type="number" min="1" max="10" value="1" class="cool" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="lname">Children (2 - 12 yrs)</label>
+                                        <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="lname">Infant (0 - 24 Month)</label>
+                                        <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="active_lable" for="Travel class">Travel class</label>
+                                        <select class="drop_down_option">
+                                                <option>Economy class</option>
+                                                <option>Business class</option>
+                                                <option>First class</option>
+                                            </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                                <div class="row mb-0 mt-0">
+                                    <div class="col-md-5 off-set-4"></div>
+                                    <div class="col-md-4 off-set-4">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck1"> <span id="Check_content">Direct Flight</span>
+                                        <button type="submit" class="btn btn-danger my-1 ">Show flights</button>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -367,6 +945,43 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#watch-me").click(function() {
+                $("#show-me:hidden").show('slow');
+                $("#show-me-two").hide();
+                $("#show-me-three").hide();
+            });
+            $("#watch-me").click(function() {
+                if ($('watch-me').prop('checked') === false) {
+                    $('#show-me').hide();
+                }
+            });
+
+            $("#see-me").click(function() {
+                $("#show-me-two:hidden").show('slow');
+                $("#show-me").hide();
+                $("#show-me-three").hide();
+            });
+            $("#see-me").click(function() {
+                if ($('see-me-two').prop('checked') === false) {
+                    $('#show-me-two').hide();
+                }
+            });
+
+            $("#look-me").click(function() {
+                $("#show-me-three:hidden").show('slow');
+                $("#show-me").hide();
+                $("#show-me-two").hide();
+            });
+            $("#look-me").click(function() {
+                if ($('see-me-three').prop('checked') === false) {
+                    $('#show-me-three').hide();
+                }
+            });
+
+        });
+    </script>
 </body>
 
 </html>
