@@ -413,16 +413,7 @@ h6 {
 
 #hero .container {
     padding-top: 80px;
-}
-
-#hero:before {
-    content: "";
-    background: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
+    background: #ffffffa1;
 }
 
 #hero h1 {
@@ -430,11 +421,11 @@ h6 {
     font-size: 48px;
     font-weight: 700;
     line-height: 56px;
-    color: #fff;
+    color: #009970;
 }
 
 #hero h2 {
-    color: #eee;
+    color: #009970;
     margin-bottom: 40px;
     font-size: 15px;
     font-weight: 500;
@@ -514,13 +505,12 @@ section {
 
 section#counts {
     background: #009970;
-    height: 450px;
+    height: 409px;
 }
 
 div.wrap {
     vertical-align: middle;
     background: white;
-    padding-top: 11px;
 }
 
 div.wrap div {
